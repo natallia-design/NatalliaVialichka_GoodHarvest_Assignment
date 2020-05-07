@@ -1,0 +1,718 @@
+
+*{
+  box-sizing: border-box;
+}
+
+:root{
+
+  --context: 1440;
+  --h1 : calc( 60 / ( var(--context) / 100 ) * 1vw );
+  --h2 : calc( 38 / ( var(--context) / 100 ) * 1vw );
+  --h3 : calc( 25 / ( var(--context) / 100 ) * 1vw );
+  --h4 : calc( 20 / ( var(--context) / 100 ) * 1vw );
+  --h5 : calc( 18 / ( var(--context) / 100 ) * 1vw );
+  --h6 : calc( 16 / ( var(--context) / 100 ) * 1vw );
+  --p : calc( 18 / ( var(--context) / 100 ) * 1vw );
+  --blockquote : calc( 18 / ( var(--context) / 100 ) * 1vw );
+
+  --padding: 4vw;
+
+  /* main_colors */
+
+  --brown: #8E583C;
+  --yellow: #E8D05C;
+  --lightbluebg: #F6FCFA;
+  --peach: #F4E9E4;
+  --pink: #DFB3C2;
+  --blue: #B3D2DF;
+  --lightgreen: #C2DFB3;
+  --green: #86C067;
+  --green_hover: #94D272;
+
+  --lightgray: #E9E9E9;
+  --lightblue: #DFE6EE;
+  --gray_one: #8091A5;
+  --gray_two: #667587;
+  --gray_three: #3F4A56;
+  --gray_four: #313541;
+  --grayfont: #5F5F5F;
+  --white: #ffffff;
+
+  --gradient: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgba(194, 223, 178, 0.06), rgba(134, 192, 103, 0.19));
+}
+
+
+html{
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, p, blockquote, li, figcaption{
+  font-family: 'Montserrat', sans-serif;
+}
+
+h5, h6{
+  font-family: 'Hind Madurai', sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6, p, li, a{
+  color: var(--grayfont);
+}
+
+h1{
+  font-weight: 700;
+  font-size: var(--h1);
+  line-height: 1.2;
+  letter-spacing: -3;
+}
+
+h2{
+  font-size: var(--h2);
+  line-height: 1.3;
+  padding: 0.5rem 0 0.2rem;
+}
+
+h3, h4, h5, figcaption{
+  line-height: 1.4;
+}
+
+h3{
+  font-size: var(--h3);
+  letter-spacing: 2%;
+  padding: 0.5rem 0;
+}
+
+h4, figcaption{
+  font-size: var(--h4);
+  font-weight: 600;
+}
+h5{
+  font-size: var(--h5);
+}
+figcaption{
+  font-weight: 500;
+}
+
+h6{
+  font-size: var(--h6);
+}
+
+p, li, a{
+  font-size: var(--p);
+  line-height: 1.43;
+}
+
+blockquote{
+  font-style: italic;
+  font-size: var(--blockquote);
+  color: var(--brown);
+  line-height: 1.7;
+  min-width: 33ex;
+  max-width: 46ex;
+}
+
+li{
+  font-size: var(--p);
+}
+
+a{
+  text-decoration: none;
+}
+
+
+/* /////////////////////////////////////////////////////
+                       NAVIGATION
+///////////////////////////////////////////////////// */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+}
+
+#menu li{
+  display: inline-block;
+  padding: 0 3rem;
+}
+
+#menu li:not(:last-child){
+  border-right: 2px solid var(--green);
+}
+
+header a{
+  font-size: var(--h4);
+  color: var(--grayfont);
+  text-decoration: none;
+}
+
+#nav_bar{
+  width: 100%;
+  padding: 1rem 5vw 1rem 1rem;
+  border: 1px solid var(--lightgray);
+  background-color: var(--white);
+}
+
+#nav_bar img{
+  width: 100%;
+}
+
+
+.top img{
+  width: 100%;
+}
+
+.top h1{
+  max-width: 11ex;
+}
+.top h2{
+  font-size: var(--h3);
+  max-width: 33ex;
+}
+
+
+section{
+  width: 100vw;
+  height: 100vh;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  justify-items: center;
+  align-items: center;
+  padding: var(--padding);
+  grid-gap: 2vw;
+}
+
+
+img{
+  width: 90%;
+}
+
+.content{
+  width: 90%;
+}
+
+
+.disc{
+  list-style-type:disc;
+  list-style-position: inside;
+}
+
+/* //////////////////////////////////////////////1 */
+.first{
+  background-color: var(--peach);
+}
+
+.first p, .second p{
+  font-size: var(--h4);
+  padding: 0.5rem 0;
+
+}
+/* //////////////////////////////////////////////2 */
+.second{
+  background-color: var(--lightbluebg);
+}
+
+
+
+.second h4 {
+  font-weight: 400;
+}
+/* //////////////////////////////////////////////3 */
+
+.third{
+  text-align: center;
+  padding: var(--padding);
+  background-image: url(/images/background_veggi3_1.svg);
+  background-repeat: no-repeat;
+  background-size: 34vw, cover;
+  background-position: right bottom;
+
+}
+
+
+.grid_three{
+  margin: 2rem 0 0;
+}
+
+#items li{
+  display: inline-block;
+margin: 1em;
+}
+
+.item{
+  width: 23vw;
+  height: 23vw;
+}
+
+#items img, #items figcaption{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.25);
+}
+
+
+.item figcaption{
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  padding: calc(var(--padding)/3);
+}
+
+/* //////////////////////////////////////////////4 */
+.fourth{
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--lightgreen);
+}
+
+
+.fourth .content li, h3:not(.third h3), p{
+  max-width: 56ex;
+}
+
+.fourth .content ul:nth-child(2) li{
+  padding: 0.7rem 0 0;
+}
+
+.fourth ul:first-child li{
+  display: inline;
+  border: 1px var(--lightgreen) solid;
+  padding: 2rem;
+  margin: 0 0.5rem;
+}
+
+.fourth ul:first-child {
+  display: flex;
+  justify-content: center;
+}
+
+.fourth .season{
+border-bottom: 2px solid var(--green_hover);
+display: inline-block;
+padding-bottom: 0;
+color: var(--green);
+margin-bottom: 1em;
+
+}
+/* //////////////////////////////////////////////4.2 */
+.hidden{
+  padding: 0 var(--padding) var(--padding);
+  background-image: var(--gradient);
+}
+
+.hidden article:nth-child(2) > figure{
+  width: 70%;
+  margin-left: 20%;
+}
+
+/* //////////////////////////////////////////////6 */
+.six{
+  background-image: url(/images/background-veggi1.svg);
+  background-repeat: no-repeat;
+  background-size: 34vw, cover;
+  background-position: right bottom;
+}
+
+/* ///////////////////////////////////// Testimonial */
+
+.persona{
+    width: 8rem;
+    height: 100%;
+    text-align: left;
+  }
+
+.stars{
+  width: 8rem;
+}
+
+
+.testimonial li:first-child{
+  margin-bottom: 2rem;
+}
+
+/* .testimonial div > figure:first-child{
+  margin: 4rem 0 0.5rem;
+} */
+
+
+/* ////////////////////////////////////// Footer */
+
+footer{
+  background-color: var(--lightgray);
+  /* height: 40rem; */
+  box-shadow: -1px -1px 2px 1px var(--lightgray);
+  text-align: center;
+}
+
+footer ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  padding: 2rem 0 0 calc(var(--padding) + 5rem);
+}
+
+/* ///////////////////////////
+    BUTTON
+//////////////////////// */
+
+footer a{
+  color: var(--gray_four);
+  text-decoration: none;
+}
+
+.button_cta {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 2.5;
+  padding: 0.3rem 3rem;
+  margin: 2rem 0;
+  font-size: var(--h4);
+  text-align: center;
+  color: var(--white);
+  border-radius: 10px;
+  background-color: var(--green);
+  transition: box-shadow 1s ease-in-out;
+  transform: scale(1);
+}
+
+/* ////////////////////////////
+      STATES
+//////////////////////////// */
+
+.button_cta:hover {
+  transform: scale(1.01);
+  font-weight: 500;
+  background-color: var(--green_hover);
+  box-shadow: 0px 0px 13px -5px var(--gray_two);
+}
+
+.button_cta:active {
+  box-shadow: inset 0px 0px 13px -5px var(--gray_two);
+  background-color: var(--green);
+}
+
+#menu a:hover{
+  color: var(--green);
+  border-bottom: 1px solid var(--green);
+}
+
+#menu a:active{
+  color: var(--green);
+}
+
+footer a:hover{
+  border-bottom: 1px solid var(--gray_four);
+}
+
+
+
+/*            MEDIA QUERIES
+////////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//////////////////////////////////////////////////
+///////////////////////////////////////////////// */
+@media screen and (max-width: 1280px){
+  :root{
+      --context: 1280;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  :root{
+      --context: 1024;
+  }
+  #nav_bar{
+    padding: 1rem;
+    padding: 1rem 3vw 1rem 1rem;
+  }
+  #menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    padding: 0.5rem 0 0.5rem;
+
+  }
+
+  #menu li{
+    padding: 0 1rem;
+  }
+
+  .hidden article:nth-child(2) > figure{
+    width: 100%;
+    margin-left: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 768px){
+  :root{
+      --context: 768;
+  }
+
+
+}
+
+
+/* General CSS */
+
+/* Agnostic Media Queries CSS */
+@media screen and (max-width: 1440px){}
+@media screen and (max-width: 1280px){}
+@media screen and (max-width: 1024px){}
+
+/* -------------------------------------
+	Tablets & Mobile
+------------------------------------- */
+
+/* ----------- iPad Pro ----------- */
+/* Portrait and Landscape */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 1.5),
+
+  screen and (max-device-width: 1024px),
+
+  screen and (max-width: 1024px){
+    :root{
+      --context: 1024;
+    }
+}
+
+/* Portrait */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    :root{
+      --context: 1024;
+    }
+}
+
+/* Landscape */
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    :root{
+      --context: 1024;
+    }
+}
+
+/* General styles for Portrait */
+@media only screen
+  and (orientation: portrait) {
+}
+
+/* General styles for Mobile / tablets */
+@media only screen and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (max-width: 1366px) and (-webkit-min-device-pixel-ratio: 3){
+    :root{
+      --context: 1024;
+    }
+}
+
+/* General styles for 1024px screens */
+@media screen and (max-width: 1024px), screen and (max-device-width: 1024px){
+  :root{
+    --context: 1024;
+  }
+}
+
+/* iPad (iPads 1-5 and iPad mini) landscape */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+}
+
+/* iPad (iPads 1-5 and iPad mini) portrait */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  :root{
+    --context: 768;
+  }
+}
+
+/* For all landscape */
+@media only screen
+and (max-device-width: 830px)
+and (orientation : landscape) {
+  :root{
+    --context: 830;
+  }
+}
+
+/* For all iPad mini and mobile */
+@media screen and (max-width: 800px), screen and (max-device-width: 800px){
+  :root{
+    --context: 800;
+   }
+
+
+   a, p, li{
+     font-size: var(--h4);
+   }
+
+   .grid{
+    display: flex;
+     flex-direction: column-reverse;
+     justify-content: space-around;
+   }
+
+   #nav_bar{
+     display: inline-block;
+     width: 100%;
+     padding: 0.5rem 5rem 0;
+     }
+
+   header{
+     position: relative;
+   }
+
+   .item{
+    width: 40vw;
+    height: 100%;
+  }
+   section{
+     width: 100%;
+     height: 100%;
+     }
+
+   .top{
+      display: flex;
+      }
+
+   .top h1 {
+     width: 100%;
+     padding-top: 3vh;
+     }
+
+   .hidden article:nth-child(2) > figure{
+      width: 90%;
+      }
+   figure{
+     text-align: center;
+
+   }
+
+   #menu li {
+    padding: 1rem 6rem;
+   }
+
+
+/* /////////////////// Buttons */
+
+   .button_cta {
+     padding: 0.6rem 3rem;
+     margin: 0.5rem 0;
+     font-size: var(--h3);
+   }
+
+   #items img, #items figcaption, .button_cta {
+     border-radius: 4px;
+   }
+
+   /* //////////////////// Testimonial */
+
+  .persona{
+    width: 50%;
+   }
+  .phone{
+      height: 100%;
+  }
+  .stars{
+    width: 50%;
+  }
+
+  .testimonial{
+  padding: 2rem;
+  text-align: center;
+  }
+
+  .testimonial li:first-child{
+    margin-bottom: 0.5rem;
+  }
+
+  /* /////////////////////// Footer */
+
+   footer ul{
+    flex-direction: row;
+    margin: 0;
+    padding: 5%;
+  }
+
+}
+
+/* iPhones */
+@media screen and (max-width: 740px), screen and (max-device-width: 740px){
+}
+
+/* Iphone 6+, 6s+, 7+ */
+@media only screen
+and (min-device-width : 414px)
+and (max-device-width : 736px),
+screen and (max-width: 750px){
+  :root{
+    --context: 750;
+  }
+  #menu li {
+    padding: 1rem 3rem;
+   }
+
+   #nav_bar {
+    padding: 0.5rem 1rem 0;
+   }
+}
+
+/* Iphone 6, 6s, 7 */
+@media only screen
+and (max-device-width : 375px),
+  screen and (max-width: 375px){
+
+  }
+
+/* Iphone 5, 5s, SE */
+@media only screen
+and (max-device-width : 320px),
+  screen and (max-width: 320px){
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
